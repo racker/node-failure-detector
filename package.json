@@ -6,7 +6,7 @@
   "homepage": "https://github.com/racker/node-failure-detector",
   "repository": {
     "type": "git",
-    "url": "git@github.com:racker/node-failure-detector.git"
+    "url": "git://github.com/racker/node-failure-detector.git"
   },
   "main": "lib/failure-detector.js",
   "directories": {

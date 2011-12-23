@@ -18,7 +18,7 @@
 
 var FailureDetector = require('../lib/failure-detector').FailureDetector;
 
-exports['test_all_good'] = function(test, assert) {
+exports['test_obvious'] = function(test, assert) {
   var d = new FailureDetector();
 
   for (var i = 1; i < 100; i ++ ) {
@@ -32,6 +32,13 @@ exports['test_all_good'] = function(test, assert) {
   // should be pretty certain everything is fine.
   // console.log("phi = ", d.phi());
   assert.ok(d.phi() <= 0.01);
+
+
+  assert.ok(d.phi(Date.now() + 120 * 1000) > 9.0);
+  assert.ok(d.phi(Date.now() + 120 * 1000) < 9.2);
+
+  assert.ok(d.phi(Date.now() + 200 * 1000) > 40);
+  assert.ok(d.phi(Date.now() + 200 * 1000) < 50);
 
   test.finish();
 };

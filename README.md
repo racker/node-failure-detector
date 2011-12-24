@@ -15,7 +15,7 @@ Example
     server.on('message', function(msg) {
       var f;
       if (msg.type == "ping") {
-        if (fds[server.id] === undefined) {
+        if (!fds[server.id]) {
           fds[server.id] = new fd.FailureDetector();
         }
         fds[server.id].report();

@@ -26,8 +26,8 @@ exports['test_obvious'] = function(test, assert) {
   }
 
   // mean should be almost exactly one second
-  // console.log("mean = ", d.mean);
-  assert.ok(999 <=  d.mean && d.mean <= 1001);
+  // console.log("mean = ", d._mean);
+  assert.ok(999 <=  d._mean && d._mean <= 1001);
 
   // should be pretty certain everything is fine.
   // console.log("phi = ", d.phi());
@@ -53,20 +53,16 @@ exports['test_from_cassandra'] = function(test, assert) {
 
   var expected = 0.4342;
   var actual = d.phi(666);
-  // console.log("mean = ", d.mean);
+  // console.log("mean = ", d._mean);
   // console.log("phi = ", actual);
   assert.ok(expected - 0.01 <= actual && actual <= expected + 0.01);
 
   //oh noes, a much higher timestamp, something went wrong!
   expected = 9.566;
   actual = d.phi(3000);
-  // console.log("mean = ", d.mean);
+  // console.log("mean = ", d._mean);
   // console.log("phi = ", actual);
   assert.ok(expected - 0.01 <= actual && actual <= expected + 0.01);
   test.finish();
 };
-
-
-
-
 

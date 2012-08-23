@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/racker/node-failure-detector.png)](http://travis-ci.org/racker/node-failure-detector)
 node-failure-detector
 ====================
 
